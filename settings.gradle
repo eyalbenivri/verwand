@@ -1,0 +1,15 @@
+pluginManagement {
+	repositories {
+		gradlePluginPortal()
+	}
+}
+rootProject.name = 'verwand'
+
+def compositeFile = file('composite.gradle')
+if (compositeFile.exists()) {
+    apply from: compositeFile
+}
+
+include 'verwand-web'
+include 'verwand-common'
+include 'verwand-kafka_2_1'
